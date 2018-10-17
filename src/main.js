@@ -29,7 +29,5 @@ $(document).ready(function() {
     $('.showError').text(`There was an error processing your request: ${error.message}`);
   });
 
-  let targetName = dinosaurs[Math.floor(Math.random()*dinosaurs.length)];
-  
-    
+  let targetName = dinosaurs[Math.floor(Math.random()*dinosaurs.length)];    
 });
