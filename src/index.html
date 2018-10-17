@@ -4,7 +4,20 @@
     <title>DinoHangman</title>
   </head>
   <body>
-    <p>DinoHangman</p>
-    <p class="showError"></p>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Dino Hangman</h1>
+      </div>
+      <div class="page">
+        <h2 id="letters"></h2>
+        <div id="guessResult">Lives: <span id="life"></span>&nbsp;Guesses: <span id="guessedLetters"></span></div>
+        <form id="guess">
+          <input type="text" id="guessLetter" maxlength="1">
+          <button type="submit" class="btn btn-secondary">Guess!</button>
+        </form>
+      </div>
+      <p class="showError"></p>
+      <div id="gameover"></div>
+      </div>
   </body>
 </html>

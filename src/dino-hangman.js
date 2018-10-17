@@ -14,7 +14,7 @@ export class Hangman {
     // letter = "a"
     // this.guess = ["l", "a"]
     //this.matchedIndice = [2, 3];
-    let regex = RegExp(letter, 'g');
+    let regex = RegExp(letter, 'gi');
     let matchedIndiceTemp = [];
     this.guess.push(letter);
     while (regex.exec(this.targetWord) !== null) {
