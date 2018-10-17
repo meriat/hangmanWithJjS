@@ -31,5 +31,14 @@ export class Hangman {
             return false;
         }
     }
+
+    checkDuplicate(letter) {
+        if(this.guess.includes(letter)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 }
 
