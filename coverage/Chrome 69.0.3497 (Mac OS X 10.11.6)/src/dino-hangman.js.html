@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/dino-hangman.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> dino-hangman.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/1</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">!function(e){var t={};function n(r){<span class="missing-if-branch" title="if path not taken" >I</span>if(t[r])<span class="cstat-no" title="statement not covered" >return t[r].exports;v</span>ar s=t[r]={i:r,l:!1,exports:{}};return e[r].call(s.exports,s,s.exports,n),s.l=!0,s.exports}n.m=e,n.c=t,n.d=<span class="fstat-no" title="function not covered" >function(e,t,r){<span class="cstat-no" title="statement not covered" ></span>n.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:r})}</span>,n.r=<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>Object.defineProperty(e,"__esModule",{value:!0})}</span>,n.n=<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>var t=e&amp;&amp;e.__esModule?<span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>return e.default}</span>:<span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>return e}</span>;<span class="cstat-no" title="statement not covered" >r</span>eturn n.d(t,"a",t),t}</span>,n.o=<span class="fstat-no" title="function not covered" >function(e,t){<span class="cstat-no" title="statement not covered" ></span>return Object.prototype.hasOwnProperty.call(e,t)}</span>,n.p="/var/folders/zz/zyxvpxvq6csfxvn_n00000s4000069/T/_karma_webpack_/",n(n.s=14)}({14:function(module,exports,__webpack_require__){"use strict";eval('\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nvar Hangman = exports.Hangman = function () {\n  function Hangman(targetWord) {\n    _classCallCheck(this, Hangman);\n\n    this.targetWord = targetWord;\n    this.life = 7;\n    this.guess = [];\n    this.matchedIndice = [];\n  }\n\n  _createClass(Hangman, [{\n    key: \'guessLetter\',\n    value: function guessLetter(letter) {\n      var _this = this;\n\n      //target word = "Hello"\n      //letter = "l"\n      // this.guess = ["l"]\n      // this.matchedIndice = [2, 3];\n      // letter = "a"\n      // this.guess = ["l", "a"]\n      //this.matchedIndice = [2, 3];\n      var regex = RegExp(letter, \'g\');\n      var matchedIndiceTemp = [];\n      this.guess.push(letter);\n      while (regex.exec(this.targetWord) !== null) {\n        matchedIndiceTemp.push(regex.lastIndex - 1);\n      }\n      if (matchedIndiceTemp.length !== 0) {\n        matchedIndiceTemp.forEach(function (index) {\n          _this.matchedIndice.push(index);\n        });\n        return true;\n      } else {\n        this.life--;\n        return false;\n      }\n    }\n  }, {\n    key: \'checkDuplicate\',\n    value: function checkDuplicate(letter) {\n      if (this.guess.includes(letter)) {\n        return false;\n      } else {\n        return true;\n      }\n    }\n  }]);\n\n  return Hangman;\n}();//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvZGluby1oYW5nbWFuLmpzPzI2MjIiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztJQUNFO21CQUFZO0FBQ1Y7O1NBQUssYUFDTDtTQUFLLE9BQ0w7U0FBSyxRQUNMO1NBQUssZ0JBQ047QUFFRDs7OztnQ0FBWTtBQUNWOztBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO1VBQUksUUFBUSxPQUFPLFFBQ25CO1VBQUksb0JBQ0o7V0FBSyxNQUFNLEtBQ1g7YUFBTyxNQUFNLEtBQUssS0FBSyxnQkFBZ0IsTUFDckM7MEJBQWtCLEtBQUssTUFBTSxZQUM5QjtBQUNEO1VBQUcsa0JBQWtCLFdBQVcsR0FDOUI7MEJBQWtCLFFBQVEsaUJBQ3hCO2dCQUFLLGNBQWMsS0FDcEI7QUFDRDtlQUNEO0FBTEQsYUFPRTthQUNBO2VBQ0Q7QUFDRjtBQUVEOzs7bUNBQWUsUUFDYjtVQUFHLEtBQUssTUFBTSxTQUFTLFNBQ3JCO2VBQ0Q7QUFGRCxhQUlFO2VBQ0Q7QUFDRjtBQXpDa0IiLCJmaWxlIjoiMTQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgSGFuZ21hbiB7XG4gIGNvbnN0cnVjdG9yKHRhcmdldFdvcmQpIHtcbiAgICB0aGlzLnRhcmdldFdvcmQgPSB0YXJnZXRXb3JkO1xuICAgIHRoaXMubGlmZSA9IDc7XG4gICAgdGhpcy5ndWVzcyA9IFtdO1xuICAgIHRoaXMubWF0Y2hlZEluZGljZSA9IFtdO1xuICB9XG5cbiAgZ3Vlc3NMZXR0ZXIobGV0dGVyKSB7XG4gICAgLy90YXJnZXQgd29yZCA9IFwiSGVsbG9cIlxuICAgIC8vbGV0dGVyID0gXCJsXCJcbiAgICAvLyB0aGlzLmd1ZXNzID0gW1wibFwiXVxuICAgIC8vIHRoaXMubWF0Y2hlZEluZGljZSA9IFsyLCAzXTtcbiAgICAvLyBsZXR0ZXIgPSBcImFcIlxuICAgIC8vIHRoaXMuZ3Vlc3MgPSBbXCJsXCIsIFwiYVwiXVxuICAgIC8vdGhpcy5tYXRjaGVkSW5kaWNlID0gWzIsIDNdO1xuICAgIGxldCByZWdleCA9IFJlZ0V4cChsZXR0ZXIsICdnJyk7XG4gICAgbGV0IG1hdGNoZWRJbmRpY2VUZW1wID0gW107XG4gICAgdGhpcy5ndWVzcy5wdXNoKGxldHRlcik7XG4gICAgd2hpbGUgKHJlZ2V4LmV4ZWModGhpcy50YXJnZXRXb3JkKSAhPT0gbnVsbCkge1xuICAgICAgbWF0Y2hlZEluZGljZVRlbXAucHVzaChyZWdleC5sYXN0SW5kZXgtMSk7XG4gICAgfVxuICAgIGlmKG1hdGNoZWRJbmRpY2VUZW1wLmxlbmd0aCAhPT0gMCkge1xuICAgICAgbWF0Y2hlZEluZGljZVRlbXAuZm9yRWFjaChpbmRleCA9PiB7XG4gICAgICAgIHRoaXMubWF0Y2hlZEluZGljZS5wdXNoKGluZGV4KTtcbiAgICAgIH0pO1xuICAgICAgcmV0dXJuIHRydWU7XG4gICAgfVxuICAgIGVsc2Uge1xuICAgICAgdGhpcy5saWZlLS07XG4gICAgICByZXR1cm4gZmFsc2U7XG4gICAgfVxuICB9XG5cbiAgY2hlY2tEdXBsaWNhdGUobGV0dGVyKSB7XG4gICAgaWYodGhpcy5ndWVzcy5pbmNsdWRlcyhsZXR0ZXIpKSB7XG4gICAgICByZXR1cm4gZmFsc2U7XG4gICAgfVxuICAgIGVsc2Uge1xuICAgICAgcmV0dXJuIHRydWU7XG4gICAgfVxuICB9XG59XG5cbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///14\n')}});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Oct 17 2018 13:43:38 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
